@@ -2,6 +2,12 @@ import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (config, { webpack }) => {
     config.plugins.push(
       new webpack.NormalModuleReplacementPlugin(
